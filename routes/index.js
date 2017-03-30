@@ -1,13 +1,9 @@
 var express = require('express');
 var Twitter = require('twitter');
+var config = require('../config');
 
 var router = express.Router(); 
-var client = new Twitter({
-  consumer_key: 'NWuEcg3r5FlG0crzKZh3TogwQ',
-  consumer_secret: 'w40ME93A1NuEihoSjI3RbNjOvbCFQfjgH3sSYRS2wLO1IPZAiu',
-  access_token_key: '403070799-7GzfJPJKdMbHSSEYtEgmSdpsUuB1S0cizHzSCOBX',
-  access_token_secret: 'lDYz7JQG7Gpl4LL7auKbozywBEkROdzRUtpF6EdHSpVhs'
-});
+var client = new Twitter(config.twitter);
 
 function parseTwitterDate(tdate) {
     var system_date = new Date(Date.parse(tdate));
