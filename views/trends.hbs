@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+{{log tweets}}
+<ul>
+  {{#each tweets}}
+  <a href={{this.url}}><li>{{this.name}}</li></a>
+  {{/each}}
+</ul>
+
+</body>
+</html>

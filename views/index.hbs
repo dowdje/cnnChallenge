@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+  </head>
+  <body>
+
+    <nav>
+      <form id="searchthis" action="/search" style="display:inline;" method="get">
+        <input id="namanyay-search-box" name="q" size="40" type="text" placeholder="Search"/>
+        <input id="namanyay-search-btn" value="Go" type="submit"/>
+      </form>
+    </nav>
+
+    <div class='backNav'>Getting my nav on</div>
+
+    <div class='container' >
+      <div class='trendColumn'>
+        <div class='trendBox'>
+          <h4 class='trendHeader'>Trending</h4>
+          <ul>
+            {{#each trends}}
+            <li class='trend'>
+              <a href={{this.href}}>{{this.name}}</a>
+              <span class='tweetVolume'>
+                {{#if this.tweet_volume}}
+                  {{this.tweet_volume}}  tweets
+                {{/if}}
+              </span>
+            </li>
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+
+      <div class='feed'>
+        <ul class='tweetList'>
+          {{#each tweets }}
+          {{log tweet}}
+            <li class='tweet'>
+              <div class='userImage'>
+                <img src={{user.profile_image_url}} />
+              </div>
+              <div class='tweetMeat'>
+                <span class='tweetInfo'>@{{this.user.name}} tweeted {{this.created_at}}</span>        
+                <span class='tweetText'>
+                  {{ this.tweetText }}
+                  <a href={{this.entities.urls.[0].url}} target='_blank'>{{this.entities.urls.[0].display_url}}</a>
+                </span>
+                <span>
+                  {{#if this.embedVideo}}
+                    <video src={{this.embedVideo}}></video>
+                  {{else if this.embedPhoto}}
+                    <img class='tweetImg' src={{this.embedPhoto}}>
+                  {{/if}}
+                </span>
+              </div>
+            </li>
+          {{/each }}
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,271 @@
+html, body {
+  padding: 0px;
+  margin: 0px;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  background: #f2f2f2;
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+}
+
+nav{
+  z-index: 3;
+  flex-direction: row;
+  flex: 2;
+  flex-shrink: 0;
+  width: 100%;
+  height: 60px;
+  position: fixed;
+  align-items: flex-end;
+  background: black;
+}
+
+.backNav{
+  z-index: 2;
+  min-height: 60px;
+  flex: 2;
+  flex-shrink: 0;
+  width: 100%;
+}
+
+.feed{
+  position: relative;
+  flex: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  overflow-y: scroll;
+}
+
+.tweetList{
+  height: 80vh;
+  padding-top: 0px;
+  margin-top: 5vh;
+  
+}
+.container{
+  padding-top: 0px;
+  flex: 9;
+  background-color: #f2f2f2;
+  padding-bottom: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between
+}
+
+
+img{
+  padding: 5px 0px 0px 5px ;
+}
+
+ul{
+  padding: 0px;
+  margin: 0px;
+}
+
+.trend{
+  display: flex;
+  flex-direction: column;
+  font: 13px;
+  padding: 0px;
+  margin: 0px;
+  height: 30px;
+  margin-left: 5px;
+  list-style: none;
+  font-style: none;
+}
+.userImage{
+  flex:1;
+}
+.tweetMeat{
+  padding-top: 7px;
+  display: flex;
+  flex-direction: column;
+  flex:6;
+}
+
+.trend a{
+  padding: 0px;
+  margin: 0px;
+}
+
+.tweetVolume{
+  padding: 0px;
+  margin: 0px;
+  font-size: 11px;
+  color: grey;
+  display: none;
+}
+
+.tweetText{
+  font-size: 14px;
+}
+
+.tweetInfo{
+  font-size: 11px;
+  padding-bottom: 7px;
+}
+
+.trend a:link{
+  text-decoration: none;
+  font-size: 13px;
+  color: #0084B4;
+  font-weight: bold;
+  margin-left: 4px;
+}
+h5{
+  margin: 0px;
+}
+
+.trendHeader{
+  margin:0px;
+  padding: 0px;
+  padding-right: 5px;
+  padding-left: 5px;
+  justify-content: center;
+  align-self: center;
+  font-style: none;
+  color: #7c8696;
+}
+
+.trend a:hover{
+  color: #0099ff;
+  text-decoration: underline;
+}
+
+.trendBox{
+  display: flex;
+  flex-direction: row;
+  margin: 0px;
+  padding: 0px;
+  flex: 1;
+  border: 1px solid #e6e6e6;
+  border-radius: 1px;
+  background-color: white;
+  align-items: stretch;
+
+}
+
+.trendBox ul{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: middle;
+  overflow-x: scroll;
+
+}
+
+.trendBox ul li{
+  flex: 1;
+  border-left: 1px solid black;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.tweetColumn {
+  margin-top: 5vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: middle;
+  align-self: center;
+}
+
+.tweet {
+  max-width: 500px;
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  list-style: none;
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+  border: 1px solid #000000;
+  box-shadow: 5px 5px 3px grey;
+  border-radius: 5px;
+  color: black;
+  background-color: white;
+}
+
+form{
+  float: right;
+  padding-right: 20px;
+}
+
+#namanyay-search-btn {
+background:#0099ff;
+color:white;
+font: 'trebuchet ms', trebuchet;
+padding:10px 20px;
+border-radius:0 5px 5px 0;
+-moz-border-radius:0 5px 5px 0;
+-webkit-border-radius:0 5px 5px 0;
+-o-border-radius:0 5px 5px 0;
+border:0 none;
+font-weight:bold;
+}
+ 
+#namanyay-search-box {
+background: #eee;
+padding:10px;
+ border-radius:5px 0 0 5px;
+-moz-border-radius:5px 0 0 5px;
+-webkit-border-radius:5px 0 0 5px;
+-o-border-radius:5px 0 0 5px;
+margin-top: 10px;
+border:0 none;
+width:160px;
+ }
+
+@media (min-width: 1024px){
+  .container{
+    flex-direction: row;
+    z-index: 1;
+  }
+
+  .trendBox{
+    flex-direction: column;
+    width: 220px;
+    height: 400px;
+    overflow-y: scroll;
+    margin-top: 50px;
+    margin-left: 30px;
+  }
+
+  .trendBox ul{
+    flex-direction: column;
+    overflow-y: scroll;
+  }
+
+  .trendHeader{
+    font-style: none;
+    color: #7c8696;
+    padding-bottom: 10px;
+    padding-left: 8px;
+    padding-top: 5px;
+    align-self: left;
+  }
+
+  .trendBox ul li{
+    border: 0 none;
+    min-height:35px;
+    align-self: flex-start;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .feed{
+    height: 90vh;
+  }
+  .tweetVolume{
+    display: block;
+    margin-left: 4px;
+  }
+}
+
+
+
+
